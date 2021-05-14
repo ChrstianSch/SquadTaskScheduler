@@ -1,0 +1,25 @@
+//Override styles and variable values (global)
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet');
+
+$seablue: #324ea8;
+$babyblue: #3273a8;
+$light-blue: #328ca8;
+$dark-blue: #191b78;
+$light: #f8f8f8;
+
+//Update bootstrap global variables
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$primary: $babyblue;
+
+$link: $light-blue;
+
+// Set custom global styles
+
+html {
+    background: linear-gradient(to right top, $seablue, $babyblue);
+}
+
+html, body {
+    height: 100%;
+}
