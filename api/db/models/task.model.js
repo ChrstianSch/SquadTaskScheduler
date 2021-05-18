@@ -1,3 +1,4 @@
+const { isInteger } = require('lodash');
 const mongoose = require('mongoose');
 
 const TaskSchema = new mongoose.Schema({
@@ -7,10 +8,21 @@ const TaskSchema = new mongoose.Schema({
         minlength: 1,
         trim: true
     },
-    _listId: {
-        type: mongoose.Types.ObjectId,
+    description: {
+        type: String,
+        trim: true
+    },
+    completeBy: {
+        type: Date,
         required: true
     },
+    priority: {
+        type: Number,
+        required: true
+    },
+    users: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    }],
     completed: {
         type: Boolean,
         default: false

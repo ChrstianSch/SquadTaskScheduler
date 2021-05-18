@@ -9,6 +9,10 @@ const bcrypt = require('bcryptjs');
 const jwtSecret = "51778657246321226641fsdklafjasdkljfsklfjd7148924065";
 
 const UserSchema = new mongoose.Schema({
+    name:{
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
@@ -20,18 +24,8 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 8
-    },
-    sessions: [{
-        token: {
-            type: String,
-            required: true
-        },
-        expiresAt: {
-            type: Number,
-            required: true
-        }
-    }]
-});
+    }
+})
 
 
 // *** Instance methods ***
