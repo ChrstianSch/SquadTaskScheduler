@@ -1,5 +1,5 @@
-const { isInteger } = require('lodash');
 const mongoose = require('mongoose');
+const slugify = require('slugify')
 
 const TaskSchema = new mongoose.Schema({
     title: {
@@ -26,9 +26,22 @@ const TaskSchema = new mongoose.Schema({
     completed: {
         type: Boolean,
         default: false
+    },
+    slug: {
+      type: String,
+      required: true,
+      unique: true
     }
 })
 
-const Task = mongoose.model('Task', TaskSchema);
+TaskSchema.pre('validate', function(next) {
+    if (this.title) {
+        this.slug = slugify(this.title, { lower: true, strict: true })
+    }
+
+    next()
+})
+
+const Task = mongoose.model('Task', TaskSchema)
 
 module.exports = { Task }
