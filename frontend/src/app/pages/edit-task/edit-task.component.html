@@ -4,8 +4,45 @@
         Edit task
       </h1>
   
-      <input class="input has-background-light is-medium" type="text" placeholder="Enter task name...">
-      <br><br>
+      <div>
+        <label for="title">Title</label>
+        <input class="input has-background-light is-medium" type="text" placeholder="Enter task name...">
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea class="input has-background-light is-medium" name="description" id="description" placeholder="Enter description..."></textarea>
+      </div>
+      <div>
+        <label for="image">Date of completion</label>
+        <input class="input has-background-light is-medium" type="date" name="date" id="date">
+      </div>
+      <div>
+        <label for="priority">Priority level</label>
+        <form action="" class="input has-background-light is-medium">
+          <input type="radio" id="high" name="priority" value="high">
+          <label for="high" style="margin-right: auto; margin-left: 5px;"> High</label>
+          <input type="radio" id="medium" name="priority" value="medium">
+          <label for="Medium" style="margin-right: auto; margin-left: 5px;"> Medium</label>
+          <input type="radio" id="low" name="priority" value="low">
+          <label for="low" style="margin-right: auto; margin-left: 5px;"> Low</label>
+        </form> 
+      </div>
+      <div>
+        <label for="username">Users</label>
+        <form action="" class="input has-background-light is-medium">
+          <input list="username" name="username">
+          <input list="username" name="username2">
+          <input list="username" name="username3">
+          <datalist id="username">
+            <option value="Thomas">
+            <option value="Francis">
+            <option value="Arne">
+            <option value="Guschtl">
+            <option value="Sabrina">
+          </datalist>
+        </form>
+      </div>
+      
       <div class="buttons is-right">
         <button class="button is-medium" routerLink="/tasks">Cancel</button>
         <button class="button is-primary has-text-white is-medium">Save</button>

@@ -32,6 +32,18 @@ html, body {
     width: 100%;
     height: 100%;
 }
+.button-width {
+  width: 100% !important;
+}
+.center-all {
+    text-align: center;
+}
+.center-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
 .modal-box {
     min-height: 200px;

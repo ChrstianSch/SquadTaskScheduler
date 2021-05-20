@@ -8,7 +8,6 @@ import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ViewTaskComponent } from './pages/view-task/view-task.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
 
@@ -20,7 +19,6 @@ import { EditTaskComponent } from './pages/edit-task/edit-task.component';
     LoginComponent,
     HomepageComponent,
     RegisterComponent,
-    ViewTaskComponent,
     EditTaskComponent,
     
   ],
