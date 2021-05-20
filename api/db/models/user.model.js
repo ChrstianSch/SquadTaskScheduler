@@ -6,12 +6,15 @@ const bcrypt = require('bcryptjs');
 
 
 // JWT Secret
-const jwtSecret = "51778657246321226641fsdklafjasdkljfsklfjd7148924065";
+const jwtSecret = "51778657282634010264283eubktksj21226641fsdklafjasdkljfsklfjd7148924065";
 
 const UserSchema = new mongoose.Schema({
     name:{
         type: String,
-        required: true
+        required: true,
+        minlength: 1,
+        trim: true,
+        unique: true
     },
     email: {
         type: String,
@@ -23,8 +26,18 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        minlength: 8
-    }
+        minlength: 3
+    },
+    sessions: [{
+        token: {
+            type: String,
+            required: true
+        },
+        expiresAt: {
+            type: Number,
+            required: true
+        }
+    }]
 })
 
 
@@ -34,7 +47,7 @@ UserSchema.methods.toJSON = function () {
     const user = this;
     const userObject = user.toObject();
 
-    // return the document except the password and sessions (these shouldn't be made available)
+    // return the document except the password and sessions
     return _.omit(userObject, ['password', 'sessions']);
 }
 
