@@ -236,12 +236,6 @@ app.post('/login', (req, res) => {
     })
 })
 
-// POST /logout
-// logout processing
-app.post('/logout', (req, res) => {
-
-})
-
 /**
  * GET /users/me/access-token
  * Purpose: generates and returns an access token
