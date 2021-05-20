@@ -12,18 +12,14 @@ export class NewTaskComponent implements OnInit {
 
   constructor(private taskService: TaskService, private route: ActivatedRoute, private router: Router) { }
 
-  author: string;
+  
   
   ngOnInit() {
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.author = params['author'];
-      }
-    )
+    
   }
 
-  createTask(title: string) {
-    this.taskService.createTask(title, description, completeBy, priority, completed, this.author).subscribe((newTask: Task) => {
+  createTask(title: string, description: string, completeBy: Date, priority: number, completed: boolean, author: string) {
+    this.taskService.createTask(title, description, completeBy, priority, completed, author).subscribe((newTask: Task) => {
       this.router.navigate(['../tasks'], { relativeTo: this.route });
     })
   }
