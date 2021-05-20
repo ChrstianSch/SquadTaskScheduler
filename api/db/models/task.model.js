@@ -8,6 +8,11 @@ const TaskSchema = new mongoose.Schema({
         minlength: 1,
         trim: true
     },
+    slug: {
+      type: String,
+      required: true,
+      unique: true
+    },
     description: {
         type: String,
         trim: true
@@ -20,17 +25,13 @@ const TaskSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    users: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'User'
-    }],
+    author: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User',
+        required: true
+    },
     completed: {
         type: Boolean,
         default: false
-    },
-    slug: {
-      type: String,
-      required: true,
-      unique: true
     }
 })
 
