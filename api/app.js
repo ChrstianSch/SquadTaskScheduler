@@ -144,6 +144,8 @@ app.post('/tasks', authenticationCheck, (req, res) => {
     })
 
     newTask.save()
+
+    res.send(newTask)
 })
 
 // GET /tasks/:slug NOT SURE IF NEEDED ATM
