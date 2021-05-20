@@ -3,8 +3,32 @@
       <h1 class="title">
         Create a new task
       </h1>
-  
-      <input #taskTitleInput class="input has-background-light is-medium" type="text" placeholder="Enter task name...">
+   
+      <div>
+        <label for="title">Title</label>
+        <input class="input has-background-light is-medium" type="text" placeholder="Enter task name...">
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea name="description" id="description" placeholder="Enter description..."></textarea>
+      </div>
+      <div>
+        <label for="image">Date of completion</label>
+        <input type="date" name="date" id="date">
+      </div>
+      <div>
+        <label for="image">Priority level</label>
+        <form action="">
+          <input type="radio" id="high" name="priority" value="high">
+          <label for="high"> High</label><br>
+          <input type="radio" id="medium" name="priority" value="medium">
+          <label for="Medium"> Medium</label><br>
+          <input type="radio" id="low" name="priority" value="low">
+          <label for="low"> Low</label><br>
+        </form> 
+      </div>
+
+
       <br><br>
       <div class="buttons is-right">
         <button class="button is-medium" routerLink="/tasks">Cancel</button>

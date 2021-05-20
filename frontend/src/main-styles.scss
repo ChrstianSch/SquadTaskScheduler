@@ -55,3 +55,65 @@ html, body {
     width: 350px;
     max-width: 350px; 
 }
+
+@media(max-width: 500px) {
+    .reverse-columns {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
+
+  .titled {
+    font-size: 58px !important;
+    font-weight: 400 !important;
+    line-height: 64px !important;
+  }
+
+  .subtitled {
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    line-height: 36px !important;
+  }
+  
+  .navbar-item img {
+    max-height: 60% !important;
+  }
+
+  .navbar-item {
+      color: $primary !important;
+      font-size: 20px;
+      font-weight: bold;
+  }
+  
+  #join-button {
+      background-color: $light-blue;
+      color: white;
+  }
+  #join-button2 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: $light-blue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px $dark-blue;
+  }
+  
+  #join-button2:hover {background-color: $seablue}
+  
+  #join-button2:active {
+    background-color: $light-blue;
+    box-shadow: 0 5px $dark-blue;
+    transform: translateY(4px);
+  }
+
+
+  #light-blue {
+      background-color: $primary;
+  }
+  
